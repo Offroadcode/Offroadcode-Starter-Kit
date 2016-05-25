@@ -1,0 +1,41 @@
+/*
+
+	PALETTE
+	======
+
+	When creating a colour for use, it must follow this convention: 
+
+	* The primary colour choice is "colour-base" and then you can have the following extensions of that shade: 
+	* "colour-lightest" and "colour-light" on one side of colour-base and on the other side "colour-dark" and colour-darkest"
+	* You don't have to have lighter and darker shades, just if you do, only go lightest/light and dark/darkest
+
+*/
+
+/* Colours */
+$white: #fff;
+
+$grey-base: #4E514E;
+	$grey-lightest: #f4f4f4;
+	$grey-light: #646864;
+	$grey-dark: #292B29;
+	$grey-darkest: #19171c;
+
+/* Brand */  
+$red-base: #DE3C4B;
+	$red-light: #F74A5B;
+	$red-dark: #a0232e;
+
+$green-base: #598B2C;
+	$green-lightest: #b1e385;
+	$green-light: #7ab348;
+	$green-dark: #3c5b1f;
+	$green-darkest: #213410;
+
+$beige-base: #EFECDA;
+	$beige-light: #f9f7ea;
+	$beige-dark: #aba898;
+	$beige-darkest: #726f5e;
+
+$brown-base: #4E3D42;
+
+// $yellow: #e8cb31; 

@@ -1,0 +1,188 @@
+/*
+
+MIXINS & USEFUL TOOLS
+=================
+
+*/
+
+/* Hex to RGBA colour conversion - https://www.newmediadenver.com/blog/hexadecimal-rgba-conversion-sass */
+// Use: @include bg($white,.5);
+@mixin bg($hexcolor, $opacity: 1) {
+	@if $opacity == 1 {
+		background-color: $hexcolor;
+		}
+	@else {
+		background-color: $hexcolor;
+		background-color: rgba($hexcolor, $opacity);
+		}
+	}
+
+// Use: @include color($white,.5);
+@mixin color($hexcolor, $opacity: 1) {
+	@if $opacity == 1 {
+		color: $hexcolor;
+		}
+	@else {
+		color: $hexcolor;
+		color: rgba($hexcolor, $opacity);
+		}
+	}
+/* Define Media Queries - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+
+/*
+Sizes based on 16px body font (these are just some arbitrary sizes, calculate your own)
+30em = 480px
+40em = 640px
+48em = 768px
+64em = 1024px
+77.5em = 1240px
+*/
+
+// Breakpoints - These are also used in _grid.scss to define where the x-small & small grid trigger
+$bp-xsmall: 20em;
+$bp-small: 30em;
+$bp-medium: 40em;
+$bp-large: 48em;
+$bp-xlarge: 64em;
+$bp-xxlarge: 77.5em;
+
+// Use: @include bp-s {};
+@mixin bp-xs { @media only screen and (min-width: $bp-x-small) { @content; } }
+@mixin bp-s { @media only screen and (min-width: $bp-small) { @content; } }
+@mixin bp-m { @media only screen and (min-width: $bp-medium) { @content; } }
+@mixin bp-l { @media only screen and (min-width: $bp-large) { @content; } }
+@mixin bp-xl { @media only screen and (min-width: $bp-xlarge) { @content; } }
+@mixin bp-xxl { @media only screen and (min-width: $bp-xxlarge) { @content; } }
+
+/* Gradient */
+// Use: @include gradient(#f36,#f60);
+@mixin gradient($from, $to) {
+	background:         -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background:         -moz-linear-gradient(top,  $from, $to);
+	background-image:   -ms-linear-gradient(top, $from, $to);
+	background-image:   -o-linear-gradient(top, $from, $to);
+	-ms-filter:         "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from', EndColorStr='$to')";
+	filter:             progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+	}
+
+/* Horizontal Gradient http://bl.ocks.org/oncletom/5860036 */
+// Use: @include horizontal-gradient(#f60, #036);
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+	background-color: $from;
+	background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+	background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+	background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+	background: -ms-linear-gradient(left, $from 0%, $to $stop);
+	background: linear-gradient(to right, $from 0%, $to $stop);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+	}
+
+/* Clearfix http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+// Use: @extend %clearfix;
+%clearfix {
+	*zoom: 1;
+	&:before {
+		content: " ";
+		display: table;
+		}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+		}
+	}
+
+/* Visually hide element http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+// Use: @extend %visuallyhidden;
+%visuallyhidden {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+	}
+
+/* Swanky link underlines - http://dbushell.com/2014/04/24/two-week-build */
+// Use @include link-underline
+@mixin link-underline {
+	// NOTE: Text-shadow color needs to match background of containing element so manually alter text-shadow colour after link-underline use on an element
+	text-shadow: 2px 0 0 $white, -2px 0 0 $white;
+	background-image: linear-gradient(to left, $grey-base,$grey-base);
+	//background-position: 0 1.15rem;
+	background-position: 0 93%;
+	background-repeat: repeat-x;
+	background-size: 1px 1px;
+	text-decoration: none;
+	}
+
+// Turn off fancy underlines if you don't want them. 
+// Use: @include no-link-underline
+@mixin no-link-underline {
+	text-shadow: none;
+	background-image: none;
+	text-decoration: none;
+	}
+
+/* Visually hide text in an element */
+// Use: @include hide-text;
+@mixin hide-text {
+	overflow: hidden;
+	text-indent: -9000px;
+	display: block;
+	}
+
+/* Vertically align something http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
+// Use: @include vertical-align (NOTE: Height needs to be explicitly set on parent element)
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    }
+
+
+/* Image floats */
+// Use: @extend %floatleft
+%floatleft {
+    display: block;
+    margin: 0 1em 1em 0;
+    @include bp-m {
+        float: left;
+        display: inline;
+        }
+    }
+
+// Use: @extend %floatright
+%floatright {
+    display: block;
+    margin: 0 0 1em 1em;
+    @include bp-m {
+        float: right;
+        display: inline;
+        }
+    }
+
+// Swap 1x for 2x images on retina https://coderwall.com/p/7pqh6q
+// Use: @include retina-image(home, logo, png, 143px, 40px);
+@mixin retina-image($context, $file, $type, $width, $height) {
+    background-image: url((asset-path($context + '/' + $file + '.' + $type)));
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (-moz-min-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx){
+        & {
+          background-image: url((asset-path($context + '/' + $file + '@2x.' + $type)));
+          -webkit-background-size: $width $height;
+          -moz-background-size: $width $height;
+          -o-background-size: $width $height;
+          background-size: $width $height;
+    }
+  }
+}

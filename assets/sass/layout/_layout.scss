@@ -1,0 +1,14 @@
+// First we import Grid stuff, you shouldn't need to edit the grid.scss file
+@import	"grid";
+
+// Any other layout styles can go below
+body {
+	padding: 0; // Top padding to account for header being fixed position in _header.scss
+	margin: 0 auto;
+	width: 100%;
+	overflow-x: hidden;
+	@include bg($white, 1);
+	/* @include bp-l {
+		padding: 0;
+		} */
+	}
