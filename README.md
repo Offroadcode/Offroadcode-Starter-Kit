@@ -1,19 +1,26 @@
 #Using the Starter Kit
 
-##Things you need to install
+##Things you need to have installed
 
-It's assumed you've already got Ruby and Sass installed. If you haven't, get them installed first along with:
+Your local dev environment probably already has this stuff installed anyway but it might be worth checking if everything is there.
 
-* Node.js and Grunt (see above)
+* Ruby
+* Sass
+* Node.js
+* Grunt
 * [Imagemagick](http://www.imagemagick.org/script/install-source.php)
 
-##It's now Grunt powered
+##Grunt
 
-It's Grunt powered so you need to install Node.js and Grunt [Here are the getting started instructions](http://gruntjs.com/getting-started) or [some other install instructions](http://24ways.org/2013/grunt-is-not-weird-and-hard/).
+We're currently using Grunt for our task management and there are some basic tasks set up in the Gruntfile.js config but you're welcome to add to them on a per project basis if you need other jobs doing beyond what's there. 
 
 ##Getting set up in your working directory / theme folder
 
-You will need to install the various Grunt tasks we use so in terminal cd to the project directory, and run `npm install`:
+Install the Grunt tasks we use so in command line/terminal cd to the project directory, and run `npm install`
+
+It might also be prudent once everything is installed, to run `grunt devupdates` if you've not used this starter kit for a while. This will check for any updates to devDepenedencies and dependencies and advise which versions are current. 
+
+Dev updates is currently set to just report what updates are available and not automatically update so if you do wish to update, edit the version numbers in package.json. 
 
 ###The basic tasks it performs are:
 
@@ -66,10 +73,10 @@ There's a couple of simple tasks to save you running everything each time. They 
 + grunt build - Compiles your sass, concatenates all your JS into a production file and builds Modernizr
 + grunt assets - Generate favicons, image optimisation and run svg2png conversion
 
-**Some useful design scripts**
+##Additional scripts
 
 The starter kit does include a couple of scripts and scaffolds that I consider useful and have found common need for on projects so delete as necessary. They are:
 
-[https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
-[https://github.com/christophery/pushy](Pushy) Off canvas navigation
-[http://cferdinandi.github.io/kraken/grid.html](Kraken Grids) for layout
+* [https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
+* [https://github.com/christophery/pushy](Pushy) Off canvas navigation
+* [http://cferdinandi.github.io/kraken/grid.html](Kraken Grids) for layout
