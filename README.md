@@ -36,6 +36,8 @@ For the time being, files in `/js/libs/` need referencing in HTML and are not pr
 
 Any images located in `/assets/images/` (jpg, png, gif) are automatically optimised and re-saved with the same name/paths when Grunt is run
 
+Image optimisation will normally be handled by Umbraco / imagegen on the server but it's handy to run this command on any site assets that might not be uploaded and processed via the CMS.
+
 ###Sass compilation
 
 All files in `/assets/sass/` are automatically compiled and minified and then output to `/assets/css/screen.css` which is referenced in the HTML
@@ -61,7 +63,7 @@ There's a couple of simple tasks to save you running everything each time. They 
 
 * `grunt` - Just compiles, autoprefixes and watches your Sass while doing local dev
 * `grunt build` - Compiles your Sass, concatenates all your JS into a production file and builds Modernizr
-* `grunt assets` - Generate favicons, image optimisation and run svg2png conversion
+* `grunt assets` - Optimises image and script assets ready for release
 * `grunt devupdates` - Only need to run at the start of a new project to check if dependencies need updating
 
 ##Additional scripts
