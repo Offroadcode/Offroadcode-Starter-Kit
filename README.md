@@ -24,7 +24,7 @@ Dev updates is currently set to just report what updates are available and not a
 
 ##Grunt tasks
 
-**JS Minify & Concatenation**
+###JS Minify & Concatenation
 
 If you need to add new JS files to the project, simply drop them into `/js/app/` and Grunt will minify and concatenate everything.
 
@@ -32,11 +32,11 @@ You don't need to reference them in the HTML, Grunt will run the task and compil
 
 For the time being, files in `/js/libs/` need referencing in HTML and are not processed in Grunt.
 
-**Image optimisation**
+###Image optimisation
 
 Any images located in /assets/images/ (jpg, png, gif) are automatically optimised and re-saved with the same name/paths when Grunt is run
 
-**Sass compiling**
+###Sass compilation
 
 All files in /assets/sass/ are automatically compiled and minified and then output to /assets/css/screen.css which is referenced in the HTML
 
@@ -44,27 +44,21 @@ Do not under any circumstances edit /assets/css/screen.css, any changes you make
 
 If you need to add a new scss file for some reason, you can do so by creating a _yourfilename.scss file (the underscore is needed) and you can then reference that in /assets/sass/screen.scss and it'll compile next time Grunt runs.
 
-**CSS Prefixing**
+###CSS Prefixing
 
 You don't need to include browser specific prefixing for properties, they're automatically added when Grunt compiles the
 Sass so just add un-prefixed properties and if they're needed it's taken care of.
 
-**SVG fallbacks to PNG**
+###Autoprefixing CSS
 
-If you create any SVG assets for the project - icons etc, save them to /assets/images/svg/ and Grunt will generate a PNG version of the same size to use as a fallback in your CSS in conjunction with Modernizr class fallbacks.
-
-If it doesn't work, install SVG2PNG - https://github.com/pascalduez/grunt-svg2png (npm install --save-dev pascalduez/grunt-svg2png)
-
-**Autoprefixing CSS**
-
-When Grunt is run, it runs through the main stylesheet/s and checks on whether selectors need vendor prefixing so write un-prefixed css and run grunt.
+You can edit `Gruntfile.js` to specify how many browser versions you want to support and provide autoprefixes for. It's just set for last 2 browser versions by default. 
 
 ##Grunt Tasks
 
 There's a couple of simple tasks to save you running everything each time. They are:
 
-* `grunt` - Just compiles, autoprefixes and watches your sass
-* `grunt build` - Compiles your sass, concatenates all your JS into a production file and builds Modernizr
+* `grunt` - Just compiles, autoprefixes and watches your Sass while doing local dev
+* `grunt build` - Compiles your Sass, concatenates all your JS into a production file and builds Modernizr
 * `grunt assets` - Generate favicons, image optimisation and run svg2png conversion
 * `grunt devupdates` - Only need to run at the start of a new project to check if dependencies need updating
 
