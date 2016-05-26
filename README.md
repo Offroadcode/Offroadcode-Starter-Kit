@@ -70,6 +70,5 @@ There's a couple of simple tasks to save you running everything each time. They 
 
 The starter kit does include a couple of scripts and scaffolds that I consider useful and have found common need for on projects so delete as necessary. They are:
 
-* [https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
-* [https://github.com/christophery/pushy](Pushy) Off canvas navigation
-* [http://cferdinandi.github.io/kraken/grid.html](Kraken Grids) for layout
+* [Headroom](https://github.com/WickyNilliams/headroom.js/) for the disappearing top header bar
+* [Pushy](https://github.com/christophery/pushy) Off canvas navigation
