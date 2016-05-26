@@ -59,28 +59,14 @@ module.exports = function(grunt) {
         }
         ,
 
-        // Create fallback PNG's from any SVG files
-        svg2png: {
-            all: {
-                files: [
-                    {
-                        cwd: 'assets/images/svg/',
-                        src: ['**/*.svg'],
-                        dest: 'assets/images/'
-                    }
-                ]
-            }
-        }
-        ,
-
         // Optimise all image assets
         imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/images/',
+                    cwd: 'assets/img/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'assets/images/'
+                    dest: 'assets/img/'
                 }]
             }
         }
@@ -166,7 +152,7 @@ module.exports = function(grunt) {
     grunt.registerTask('assets',
         [
             'uglify',
-            'imagemin',
+            'imagemin'
         ]);
 
     // Run: grunt devupdates
