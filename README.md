@@ -34,15 +34,17 @@ For the time being, files in `/js/libs/` need referencing in HTML and are not pr
 
 ###Image optimisation
 
-Any images located in /assets/images/ (jpg, png, gif) are automatically optimised and re-saved with the same name/paths when Grunt is run
+Any images located in `/assets/images/` (jpg, png, gif) are automatically optimised and re-saved with the same name/paths when Grunt is run
 
 ###Sass compilation
 
-All files in /assets/sass/ are automatically compiled and minified and then output to /assets/css/screen.css which is referenced in the HTML
+All files in `/assets/sass/` are automatically compiled and minified and then output to `/assets/css/screen.css` which is referenced in the HTML
 
-Do not under any circumstances edit /assets/css/screen.css, any changes you make will be lost next time Sass is compiled.
+Do not under any circumstances edit `/assets/css/screen.css`, any changes you make will be lost next time Sass is compiled.
 
-If you need to add a new scss file for some reason, you can do so by creating a _yourfilename.scss file (the underscore is needed) and you can then reference that in /assets/sass/screen.scss and it'll compile next time Grunt runs.
+If you need to add a new scss file for some reason, you can do so by creating a `_yourfilename.scss` file (the underscore is needed) and you can then reference that in `/assets/sass/screen.scss` and it'll compile next time Grunt runs.
+
+Any file created in `/assets/sass/` (including sub folders) is watched and compiled as long as you reference it in the `screen.scss` file.
 
 ###CSS Prefixing
 
