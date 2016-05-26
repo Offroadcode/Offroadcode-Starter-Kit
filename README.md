@@ -12,7 +12,7 @@ Your local dev environment probably already has this stuff installed anyway but 
 
 ##Grunt
 
-We're currently using Grunt for our task management and there are some basic tasks set up in the Gruntfile.js config but you're welcome to add to them on a per project basis if you need other jobs doing beyond what's there. 
+We're currently using Grunt for our task management and there are some basic tasks set up in the `Gruntfile.js` config but you're welcome to add to them on a per project basis if you need other jobs doing beyond what's there. 
 
 ##Getting set up in your working directory / theme folder
 
@@ -20,17 +20,17 @@ Install the Grunt tasks we use so in command line/terminal cd to the project dir
 
 It might also be prudent once everything is installed, to run `grunt devupdates` if you've not used this starter kit for a while. This will check for any updates to devDepenedencies and dependencies and advise which versions are current. 
 
-Dev updates is currently set to just report what updates are available and not automatically update so if you do wish to update, edit the version numbers in package.json. 
+Dev updates is currently set to just report what updates are available and not automatically update so if you do wish to update, edit the version numbers in the `package.json` file in the project root. 
 
-###The basic tasks it performs are:
+##Grunt tasks
 
-**Minifies JS and then concatenates all the files into a single file**
+**JS Minify & Concatenation**
 
-If you need to add new JS files to the project, simply drop them into /js/app/ and Grunt does the rest.
+If you need to add new JS files to the project, simply drop them into `/js/app/` and Grunt will minify and concatenate everything.
 
-You don't need to reference them in the HTML, Grunt will run the task and compile them all into production.js
+You don't need to reference them in the HTML, Grunt will run the task and compile them all into `production.js` which is referenced at the bottom of your HTML template above the `</body>` tag.
 
-For the time being, files in /js/libs/ need referencing in HTML and are not processed in Grunt.
+For the time being, files in `/js/libs/` need referencing in HTML and are not processed in Grunt.
 
 **Image optimisation**
 
@@ -51,7 +51,7 @@ Sass so just add un-prefixed properties and if they're needed it's taken care of
 
 **SVG fallbacks to PNG**
 
-If you create any SVG assets for the project - icons etc, save them to /assets/images/svg/ and Grunt will generate a PNG version of the same size to use as a fallback in your CSS.
+If you create any SVG assets for the project - icons etc, save them to /assets/images/svg/ and Grunt will generate a PNG version of the same size to use as a fallback in your CSS in conjunction with Modernizr class fallbacks.
 
 If it doesn't work, install SVG2PNG - https://github.com/pascalduez/grunt-svg2png (npm install --save-dev pascalduez/grunt-svg2png)
 
@@ -59,19 +59,14 @@ If it doesn't work, install SVG2PNG - https://github.com/pascalduez/grunt-svg2pn
 
 When Grunt is run, it runs through the main stylesheet/s and checks on whether selectors need vendor prefixing so write un-prefixed css and run grunt.
 
-**Favicon generation**
-
-If you save a decent quality (ie. One that will scale down well) logo in /assets/images/ and call it favicon.png Grunt will generate Apple and Windows favicons for use and save them out with the relevant file names in the root directory of the site.
-
-If it doesn't work, install Grunt Favicons- https://www.npmjs.com/package/grunt-favicons (npm install grunt-favicons --save-dev)
-
 ##Grunt Tasks
 
 There's a couple of simple tasks to save you running everything each time. They are:
 
-+ grunt - Just compiles, autoprefixes and watches your sass
-+ grunt build - Compiles your sass, concatenates all your JS into a production file and builds Modernizr
-+ grunt assets - Generate favicons, image optimisation and run svg2png conversion
+* `grunt` - Just compiles, autoprefixes and watches your sass
+* `grunt build` - Compiles your sass, concatenates all your JS into a production file and builds Modernizr
+* `grunt assets` - Generate favicons, image optimisation and run svg2png conversion
+* `grunt devupdates` - Only need to run at the start of a new project to check if dependencies need updating
 
 ##Additional scripts
 
