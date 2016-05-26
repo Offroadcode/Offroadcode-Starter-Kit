@@ -1,4 +1,12 @@
-// Grid is modified version of Kraken from http://kraken.io
+/*
+
+	LAYOUT GRID
+	=========
+	
+	The layout grid is a modified version of Kraken (http://kraken.io). Documentation and examples are available on the Kraken site if needed. 
+	
+	NOTE: We use number classes up to 12 to enable compatability with Umbraco's Grid package 
+*/
 
 // Layout & Grid Variables
 $container-max: 80rem;
@@ -8,25 +16,7 @@ $container-width: 100%;
 $grid-margins: 1.4%;
 $space: 1.5rem;
 
-// use: .grid-third or .grid-three-fourths etc
-/* $grid-sizes: (
-	ten: 10%,
-	twenty: 20%,
-	thirty: 30%,
-	fourty: 40%,
-	fifty: 50%,
-	sixty: 60%,
-	seventy: 70%,
-	eighty: 80%,
-	ninety: 90%,
-	sixth: 16.6666666667%,
-	quarter: 25%,
-	third: 33.33333333333%,
-	two-thirds: 66.666666666667%,
-	three-quarters: 75%,
-	full: 100%
-	); */
-
+// Use ".grid-1", "grid-6" etc
 $grid-sizes: (
 	1: 8.33333%,
 	2: 16.66667%,
@@ -42,13 +32,14 @@ $grid-sizes: (
 	12: 100%
 	);
 
-$grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
+// breakpoint, prefix, include offsets (boolean) - unless specified with a row-start-xxx class, the grid will be 100% blocks until screen size is at the xlarge breakpoint. You can customise this below.
+$grid-breakpoints: ( 
 	($bp-xsmall, ".row-start-xsmall", false),
 	($bp-small, ".row-start-small", false),
 	($bp-medium, ".row-start-medium", false),
 	($bp-large, ".row-start-large", false),
-	($bp-xlarge, ".row-start-xlarge", false),
-	($bp-xxlarge, null, true)
+	//($bp-xlarge, ".row-start-xlarge", false),
+	($bp-xlarge, null, true)
 	);
 
 %grid-base {
@@ -60,15 +51,12 @@ $grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
 	}
 
 @each $grid, $width in ($grid-sizes) {
-	//.grid-#{$grid} {
 	.grid-#{$grid} {
 		@extend %grid-base;
 		}
 	}
 
-/**
- * Add columns to grid on bigger screens
- */
+ // Add columns to grid on bigger screens
 @each $breakpoint, $prefix, $offset in ($grid-breakpoints){
 	@media (min-width: $breakpoint) {
 		@each $grid, $width in ($grid-sizes) {
@@ -104,8 +92,8 @@ $grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
 		max-width: $container-max/2;
 		}
 	&--mid {
-			max-width: $container-max/1.25;
-			}
+		max-width: $container-max/1.25;
+		}
 	&--full {
 		max-width: 100%;
 		padding-left: 0;
@@ -113,23 +101,17 @@ $grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
 			}
 	}
 
-	//.row,
 	.row {
 		margin-left: $grid-margins * -1;
 		margin-right: $grid-margins * -1;
 		@extend %clearfix;
+		
+		div {
+			// This is just to make the grid visible for demo purposes, it's not needed for any dev work
+			outline: 1px solid green;
+			}
+		
 		}
-
-/* .grid-item {
-	@extend %clearfix;
-	}
-
-.grid-item-content {
-	padding: $space;
-	header & {
-		padding: 0 $space;
-		}
-	} */
 
 .no-pad {
 	padding: 0;
@@ -159,11 +141,3 @@ $grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
 	margin-left: auto;
 	margin-right: auto;
 	}
-
-
-.row {
-	div {
-		outline: 1px solid green;
-		padding: $space;
-	}
-}

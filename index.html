@@ -9,7 +9,6 @@
 	<!-- Delete as required: Prefetch DNS for external assets (CDN-hosted libraries + plugins, font-embedding, social widgets, etc). -->
 	<link rel="dns-prefetch" href="//google-analytics.com">
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
-	<link rel="dns-prefetch" href="//use.typekit.net">
 
 	<title>Title</title>
 	<meta name="description" content=" " />
@@ -31,16 +30,13 @@
 	<!-- Stylesheets -->
     	<link rel="stylesheet" href="/assets/css/screen.css" media="screen" />
 
-	<!-- Scripts to load quick sharpish -->
-	
-
 </head>
 
 <body class=" ">
 
 	<div class="container">
 
-		<p>Simple number based grid. </p>
+		<h1>Simple number based grid.</h1>
 
 		<div class="row">
 			<div class="grid-12">12</div>
@@ -76,7 +72,7 @@
 			<div class="grid-6">6</div>
 		</div>	
 
-		<p>Offsets and floats</p>
+		<h2>Offsets and floats</h2>
 
 		<div class="row">
 			<div class="grid-6 offset-6">Offset by 6</div>
@@ -90,9 +86,34 @@
 			<div class="grid-6 float-center">Floated center</div>
 		</div>	
 
-		<p>Small screen grids</p>
+		<h2>Small screen grids</h2>
 
 		<div class="row row-start-small">
+			<div><code>.row-start-small</code></div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+		</div>	
+
+		<div class="row row-start-medium">
+			<div><code>.row-start-medium</code></div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+		</div>	
+
+		<div class="row row-start-large">
+			<div><code>.row-start-large</code></div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+			<div class="grid-3">3</div>
+		</div>	
+
+		<div class="row row-start-xlarge">
+			<div><code>.row-start-xlarge</code></div>
 			<div class="grid-3">3</div>
 			<div class="grid-3">3</div>
 			<div class="grid-3">3</div>
@@ -102,8 +123,6 @@
 	</div>
 
 	<!-- Scripts-->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="/assets/scripts/jquery-2.0.3.min.js"%3E%3C/script%3E'))</script> -->
 	<script src="/assets/js/build/production.min.js"></script>
 	<!-- Scripts -->
 </body>
