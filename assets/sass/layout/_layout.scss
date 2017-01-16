@@ -1,5 +1,5 @@
 // First we import Grid stuff, you shouldn't need to edit the grid.scss file
-@import	"grid";
+//@import	"grid";
 
 // Any other layout styles can go below
 body {
@@ -8,7 +8,29 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 	@include bg($white, 1);
-	/* @include bp-l {
-		padding: 0;
-		} */
 	}
+
+
+// Test layout
+main {
+	outline: 2px solid red;
+	background: yellow;
+	@include container;
+	}
+
+article {
+	background: pink;
+	@include span(5 of 12 0);
+	// No gutters on the right https://github.com/oddbird/susy/issues/502
+	}
+
+	.extra {
+		background: green;
+		@include span(3 of 12 0);
+		}		
+
+	aside {	
+		background: blue;
+		@include span(4 of 12 0);
+		}
+

@@ -72,17 +72,17 @@ p {
 	}
 
 a {
-	//@include hover-fade;
-	font-weight: $bold;
-	@include link-underline; 
-	@include color($brown-base,1);
-	background-image: linear-gradient(to left, $beige-dark,$beige-dark);
 	@include hover-fade;
+	font-weight: $bold;
+	//@include link-underline; 
+	@include color($brown-base,1);
+	//background-image: linear-gradient(to left, $beige-dark,$beige-dark);
+	//@include hover-fade;
 	&:hover,
 	&:active,
 	&:focus {
 		@include color($brown-base,1);
-		background-image: linear-gradient(to left, $brown-base,$brown-base);  
+		//background-image: linear-gradient(to left, $brown-base,$brown-base);  
 		}
 	}
 

@@ -1,0 +1,26 @@
+/* Define Media Queries - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+
+/*
+Sizes based on 16px body font (these are just some arbitrary sizes, calculate your own)
+30em = 480px
+40em = 640px
+48em = 768px
+64em = 1024px
+77.5em = 1240px
+*/
+
+// Breakpoints - These are also used in _grid.scss to define where the x-small & small grid trigger
+$bp-xsmall: 20em;
+$bp-small: 30em;
+$bp-medium: 40em;
+$bp-large: 48em;
+$bp-xlarge: 64em;
+$bp-xxlarge: 77.5em;
+
+// Use: @include bp-s {};
+@mixin bp-xs { @media only screen and (min-width: $bp-x-small) { @content; } }
+@mixin bp-s { @media only screen and (min-width: $bp-small) { @content; } }
+@mixin bp-m { @media only screen and (min-width: $bp-medium) { @content; } }
+@mixin bp-l { @media only screen and (min-width: $bp-large) { @content; } }
+@mixin bp-xl { @media only screen and (min-width: $bp-xlarge) { @content; } }
+@mixin bp-xxl { @media only screen and (min-width: $bp-xxlarge) { @content; } }

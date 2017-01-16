@@ -34,96 +34,66 @@
 
 <body class=" ">
 
+
 	<div class="container">
 
-		<h1>Simple number based grid.</h1>
+			<main class="">
+				<article>
+					<h1>Susy grid</h1>
+					<a href="http://susydocs.oddbird.net/">Susy Grid Docs</a>
+				</article>
+				<div class="extra">
+					<p>Extra</p>
+				</div>
+				<aside>
+					<p>This is a sidebar</p>
+				</aside>
+			</main>
 
-		<div class="row">
-			<div class="grid-12">12</div>
-		</div>	
 
-		<div class="row">
-			<div class="grid-1">1</div>
-			<div class="grid-11">11</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-2">2</div>
-			<div class="grid-10">10</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-3">3</div>
-			<div class="grid-9">9</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-4">4</div>
-			<div class="grid-8">8</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-5">5</div>
-			<div class="grid-7">7</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-6">6</div>
-			<div class="grid-6">6</div>
-		</div>	
-
-		<h2>Offsets and floats</h2>
-
-		<div class="row">
-			<div class="grid-6 offset-6">Offset by 6</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-3 offset-3">Offset by 3</div>
-		</div>	
-
-		<div class="row">
-			<div class="grid-6 float-center">Floated center</div>
-		</div>	
-
-		<h2>Small screen grids</h2>
-
-		<div class="row row-start-small">
-			<div><code>.row-start-small</code></div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-		</div>	
-
-		<div class="row row-start-medium">
-			<div><code>.row-start-medium</code></div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-		</div>	
-
-		<div class="row row-start-large">
-			<div><code>.row-start-large</code></div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-		</div>	
-
-		<div class="row row-start-xlarge">
-			<div><code>.row-start-xlarge</code></div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-			<div class="grid-3">3</div>
-		</div>	
 
 	</div>
 
 	<!-- Scripts-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="/assets/js/build/production.min.js"></script>
 	<!-- Scripts -->
+
+	<!-- -->
+	<script>
+	// Responsive navigation script
+	$(document).ready(function() {
+	    $('body').addClass('js');
+	          var $menu = $('#menu'),
+	              $menulink = $('.menu-toggle'),
+	              $menuTrigger = $('.has-subnav > a');
+
+	    $menulink.click(function(e) {
+	            e.preventDefault();
+	            $menulink.toggleClass('active');
+	            $menu.toggleClass('active');
+	    });
+
+	    var add_toggle_links = function() {
+	        if ($('.menu-toggle').is(":visible")){
+	            if ($(".toggle-link").length > 0){
+	            }
+	            else{
+	                $('.has-subnav > a').before('<span class="toggle-link"> Open submenu </span>');
+	                $('.toggle-link').click(function(e) {
+	                    var $this = $(this);
+	                    $this.toggleClass('active').siblings('ul').toggleClass('active');
+	                });
+	            }
+	        }
+	        else{
+	            $('.toggle-link').empty();
+	        }
+	     }
+	    add_toggle_links();
+	    $(window).bind("resize", add_toggle_links);
+	        });
+	</script>
+	<!-- -->
 </body>
 </html>
