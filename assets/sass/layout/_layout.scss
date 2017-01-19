@@ -1,12 +1,28 @@
-// First we import Grid stuff, you shouldn't need to edit the grid.scss file
-//@import	"grid";
+/*
 
-// Any other layout styles can go below
+LAYOUT
+======
+
+Top level layout - should only contain a couple of bits and pieces for <HTML>, <body> and perhaps some main wrappers. 
+
+Grid structure for this project uses Susy Grids and the grid layout is applied in the scss for each element rather than using grid classes in the HTML. 
+
+If you're not sure how to do this, please consult the documentation available at: 
+
+- Susy Docs: http://susydocs.oddbird.net/en/latest/
+- Susy Tutorials/Demos: http://susy.oddbird.net/demos/ 
+
+*/
+
+html {
+	overflow-x: hidden;
+	}
+
+
 body {
-	padding: 0; // Top padding to account for header being fixed position in _header.scss
+	padding: 0;
 	margin: 0 auto;
 	width: 100%;
-	overflow-x: hidden;
 	@include bg($white, 1);
 	}
 
