@@ -80,27 +80,6 @@ MIXINS & USEFUL TOOLS
 	position: absolute;
 	}
 
-/* Swanky link underlines - http://dbushell.com/2014/04/24/two-week-build */
-// Use @include link-underline
-@mixin link-underline {
-	// NOTE: Text-shadow color needs to match background of containing element so manually alter text-shadow colour after link-underline use on an element
-	text-shadow: 2px 0 0 $white, -2px 0 0 $white;
-	background-image: linear-gradient(to left, $grey-base,$grey-base);
-	//background-position: 0 1.15rem;
-	background-position: 0 93%;
-	background-repeat: repeat-x;
-	background-size: 1px 1px;
-	text-decoration: none;
-	}
-
-// Turn off fancy underlines if you don't want them. 
-// Use: @include no-link-underline
-@mixin no-link-underline {
-	text-shadow: none;
-	background-image: none;
-	text-decoration: none;
-	}
-
 /* Visually hide text in an element */
 // Use: @include hide-text;
 @mixin hide-text {
@@ -140,23 +119,3 @@ MIXINS & USEFUL TOOLS
         display: inline;
         }
     }
-
-// Swap 1x for 2x images on retina https://coderwall.com/p/7pqh6q
-// Use: @include retina-image(home, logo, png, 143px, 40px);
-@mixin retina-image($context, $file, $type, $width, $height) {
-    background-image: url((asset-path($context + '/' + $file + '.' + $type)));
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (-moz-min-device-pixel-ratio: 2),
-        only screen and (-o-min-device-pixel-ratio: 2/1),
-        only screen and (min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx){
-        & {
-          background-image: url((asset-path($context + '/' + $file + '@2x.' + $type)));
-          -webkit-background-size: $width $height;
-          -moz-background-size: $width $height;
-          -o-background-size: $width $height;
-          background-size: $width $height;
-    }
-  }
-}
