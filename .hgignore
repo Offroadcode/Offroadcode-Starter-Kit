@@ -1,5 +1,15 @@
 syntax: glob
-*.sass-cache/
+Build/App_Data/TEMP/
+Build/App_Data/umbraco.config
+Build/App_Data/Logs/
+Build/App_Data/
+Build/media
+Build/Web.config
+*/node_modules/
+*.cmd
+*.scssc
 *.map
-*/node_modules
-node_modules
+*/.sass_cache/
+packages/
+*.gitattributes
+*.gitignore
