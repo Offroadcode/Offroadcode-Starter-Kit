@@ -1,44 +1,16 @@
+/*
+
+ANIMATION
+=========
+
+Any basic, custom animation styles can go here. 
+
+For scroll triggered animations, it's worth checking out http://mynameismatthieu.com/WOW/
+
+*/
+
 /* Hover animation */
 // Use: @include hover-fade;
 @mixin hover-fade {
 	transition: all 0.3s ease 0s;
-	}
-
-/* Simple animated fade in - Useful for fading in images etc, usually a hero pic or something */
-// Use: @extend .fade-in 
-.fade-in {
-	animation: fadein 3s;
-	}
-
-@keyframes fadein {
-	from {
-		opacity: 0;
-		}
-	to {
-		opacity: 1;
-		}
-	}
-@-moz-keyframes fadein {
-	from {
-		opacity: 0;
-		}
-	to {
-		opacity: 1;
-		}
-	}
-@-webkit-keyframes fadein {
-	from {
-		opacity: 0;
-		}
-	to {
-		opacity: 1;
-		}
-	}
-@-o-keyframes fadein {
-	from {
-		opacity: 0;
-		}
-	to {
-		opacity: 1;
-		}
 	}

@@ -1,5 +1,5 @@
 ul, ol {
-	margin: 0 0 1.5rem 0;
+	margin: 0 0 $space 0;
 	}
 
 img,
@@ -24,8 +24,4 @@ figure {
 	figcaption {
 
 		}
-	}
-
-[type=submit] {
-	cursor: pointer;
 	}

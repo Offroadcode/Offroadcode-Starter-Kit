@@ -16,6 +16,7 @@ If you're not sure how to do this, please consult the documentation available at
 
 html {
 	overflow-x: hidden;
+	min-height: 100%;
 	}
 
 
@@ -23,30 +24,27 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	width: 100%;
-	@include bg($white, 1);
+	@include bg($white,1);
 	}
 
-
-// Test layout
-main {
-	outline: 2px solid red;
-	background: yellow;
+// Content layout 
+.row {
 	@include container;
 	}
 
-article {
-	background: pink;
-	@include span(5 of 12 0);
-	// No gutters on the right https://github.com/oddbird/susy/issues/502
-	}
-
-	.extra {
-		background: green;
-		@include span(3 of 12 0);
-		}		
-
-	aside {	
-		background: blue;
-		@include span(4 of 12 0);
+	// Container goes inside row and is either max-width limited (default) or full width to the edge of the browser
+	.container {
+		@include container;
+		max-width: $container-max;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: $space/2;
+		padding-right: $space/2;
+		@include bp-m {
+			padding-left: 0;
+			padding-right: 0;
+			}
+		&--full {
+			max-width: none;
+			}
 		}
-

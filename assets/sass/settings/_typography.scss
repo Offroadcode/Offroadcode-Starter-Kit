@@ -7,15 +7,15 @@
 $normal: 400;
 $bold: 700;
 
-$font-primary: 	apple-system, 
-		BlinkMacSystemFont, 
-		"Roboto", 
-		"Droid Sans", 
-		"Segoe UI", 
-		"Helvetica Neue", 
-		Helvetica, 
-		Arial, 
-		sans-serif;
+$font-primary: 	"Segoe UI",
+				apple-system, 
+				BlinkMacSystemFont, 
+				"Roboto", 
+				"Droid Sans", 		 
+				"Helvetica Neue", 
+				Helvetica, 
+				Arial, 
+				sans-serif;
 
 /* REM Font sizing - http://blog.divshot.com/post/29552945105/useful-sass-mixins-for-responsive-design-font-sizing */
 // Use: @include font-size(1,1.5);
@@ -35,7 +35,7 @@ body {
 	@include color($grey-base,1);
 	@include font-size(.875,1.25);
 	@include bp-l {
-		@include font-size(1, 1.5);
+		@include font-size(1,1.5);
 		}
 	}	
 
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	h1 {
-		@include font-size(1.75, 2);
+		@include font-size(1.75,2);
 		@include bp-l {
 			@include font-size(2.5,2.5);
 			}
@@ -63,7 +63,10 @@ h1, h2, h3, h4, h5, h6 {
 	h4, 
 	h5, 
 	h6 {
-
+		@include font-size(1.25,1.5);
+		@include bp-l {
+			@include font-size(1.5,1.75);
+			}
 		}
 
 
@@ -74,15 +77,11 @@ p {
 a {
 	@include hover-fade;
 	font-weight: $bold;
-	//@include link-underline; 
 	@include color($brown-base,1);
-	//background-image: linear-gradient(to left, $beige-dark,$beige-dark);
-	//@include hover-fade;
 	&:hover,
 	&:active,
 	&:focus {
 		@include color($brown-base,1);
-		//background-image: linear-gradient(to left, $brown-base,$brown-base);  
 		}
 	}
 
@@ -92,11 +91,11 @@ b {
 	}
 
 .medium {
-	@include font-size(1, 1.375);
+	@include font-size(1,1.375);
 	}
 
 .small {
-	@include font-size(.75, 1.25);
+	@include font-size(.75,1.25);
 	}
 
 cite {
