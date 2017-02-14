@@ -72,7 +72,6 @@ module.exports = function(grunt) {
         }
         ,
 
-
         // Auto prefix any CSS3 properties in CSS file
         autoprefixer: {
             options: {
