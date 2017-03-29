@@ -2,7 +2,7 @@
 
 *Please note: While you're welcome to use this starter kit for your own projects, it comes as-is and we don't specifically offer support for it because it's an internal tool for our use. If you have any questions, please feel free to ask, we'll do our best to help but we can't guarantee a speedy response or solution :)*
 
-##Things you need to have installed
+## Things you need to have installed
 
 Your local dev environment probably already has this stuff installed anyway but it might be worth checking if everything is there.
 
