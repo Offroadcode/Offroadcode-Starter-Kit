@@ -1,0 +1,56 @@
+User-agent: *
+Disallow: /umbraco
+Disallow: /umbraco_client
+allow: /*css*
+allow: /*js?*
+allow: /*js?*
+allow: /media/*?
+allow: /*javascript*
+Sitemap: https://www.EDITME.com/sitemap
+
+
+#	
+#	Greetings non-robot robot.txt file reading friend! 
+#	This website was designed & built by the folks at Offroadcode.
+#	
+#	Get in touch at: 
+#
+#	Web: 	offroadcode.com 
+#	Email: 	hello@offroadcode.com
+#	Tel:	+44(0)1484 643078
+#
+#
+#                                                   `                                
+#                                                  ++`                               
+#                                                 ++++`                              
+#                                                ++',++`                             
+#                                               ++'  ,++                             
+#                                              +++    ,++                            
+#                                             +++  `:  ,++                           
+#                                            +++   :::  ,++                          
+#                        ,+                 +++     :::  ,++                         
+#                       ,+++               +++  `:   :::  ,++                        
+#                      ,++ ++             +++   :::   :::  :++                       
+#                     ,++   ++           +++  `  :::   :::  :++                      
+#                    .++     ++         +++  `:,  :::   :::  :++                     
+#                   .++   :   ++       +++    ::,  :::   :::  :++                    
+#                  .++   :::   ++     +++      ::,  :::   :::  :++                   
+#                 .++     :::   ++   +++        ::,  :::   :::  :++                  
+#                .++   :,  :::   ++ +++          ::,  :::   :::  :++                 
+#               `++    ::,  :::   ++++            ::,  :::   :::  :++                
+#              `++      ::,  ::.  +++              ::,  :::   :::  :++               
+#             `++   ::   ::,  .  +++                ::,  :::   :::  ;++              
+#            `++    :::   ::,   +++                  ::,  ,::   ::   ;++             
+#           `++      :::   :.  +++                    :::  ,::        ;++            
+#          `++        :::     +++                      :::  ,::        ;++           
+#          ++          :::   +++                        :::  ,:         ;++          
+#         ++            :,  +++                          :::             ;++         
+#        ++                +++                            ::,             ;++        
+#       ++                +++                              :               ;++       
+#      ++                +++                                                ;++      
+#     ++                +++                                                  ;++     
+#    ++                +++                                                    ;++    
+#   ++                +++                                                      '++   
+#  ++                +++                                                        '++  
+# ++                +++                                                          '++ 
+#
