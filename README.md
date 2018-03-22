@@ -70,7 +70,12 @@ There's a couple of simple tasks to save you running everything each time. They 
 
 ## Additional scripts
 
-The starter kit does include a couple of scripts and scaffolds that I consider useful and have found common need for on projects so delete as necessary. They are:
+The starter kit does not include any additional scripts but here are a few tools that have been useful in past projects:
+
+When adding a new js script, just save it into the `/assets/js/libs` folder and it will be automatically minified and built into the production js file. It is best to include the uncompressed version in the libs folder so it's easy modify and debug if necessary.
+
+Any 3rd party css files should be saved as `.scss` files and added to the `/assets/sass/externals` folder and referenced in `/assets/sass/screen.scss`. Be aware that you might need to tweak file paths or variables in some downloaded files.
 
 * [Headroom](https://github.com/WickyNilliams/headroom.js/) for the disappearing top header bar
 * [Pushy](https://github.com/christophery/pushy) Off canvas navigation
+* [WOW.js](mynameismatthieu.com/WOW/index.html) Small animation library
