@@ -1,72 +1,46 @@
-/*
+/* 
 
-	DEBUG TOOLS
-	===========
+DEBUG
+=====
 
-	These are just some debug styles to confirm
-	screen sizes when swooshing around with
-	resizing the browser for quick testing.
-
-	Delete this file (and the http call in your pages)
-	when you're ready to deploy.
-
-	They compliment this code http://bit.ly/xph4ns
+Useful debug tools
 
 */
 
-body:before {
-	background: #ffc;
-	width: 96%;
-	padding: .5em 2%;
-	display: inline-block;
-	clear: both;
-	font-size: 12px;
-	font-size: .75rem;
-
-	content: "This is simply debug info using :before on the body - See bottom of /assets/debug.css for more info";
+// Highlight any images with empty alt tag https://twitter.com/AllThingsSmitty/status/930617039085035520
+img[alt=""],
+img:not([alt]),
+.todo {
+	outline: 4px dashed red;
+	position: relative;
+	&:hover {
+		&:after {
+			padding: 5px;
+			text-align: center;
+			position: absolute;
+			content: "Missing an ALT tag";
+			bottom: 100%;
+			right: 0;
+			left: 0;
+			top: auto;
+			margin: auto;
+			max-width: 200px;
+			background: #111;
+			border: 3px solid red;
+			color: white;
+			font-size: 11px;
+			line-height: 1.25;
+			text-transform: none !important;
+			}
+		}	
 	}
 
-@media only screen and (min-width: 30em) {
-body:before { content: "min-width: 480px/30em"; background:	#fcc; }
-}
-
-@media only screen and (min-width: 37.5em) {
-body:before { content: "min-width: 600px/37.5em"; background: #cfc; }
-}
-
-@media only screen and (min-width: 48em) {
-body:before { content: "min-width: 768px/48em"; background:	#fce; }
-}
-
-@media only screen and (min-width: 64em) {
-body:before { content: "min-width: 1024px/64em"; background: #ecc; }
-}
-
-@media only screen and (min-width: 78.75em) {
-body:before { content: "min-width: 1260px/78.75em"; background: pink; }
-}
-
-/*
-	The following are some exact breakpoints if you want them,
-	so you can work out screen size for tablets etc.
-*/
-
-@media only screen and (width: 20em) {
-body:before { content: "This is exactly 320px/20em"; background: #0cc; }
-}
-
-@media only screen and (width: 30em) {
-body:before { content: "This is exactly 480px/30em"; background: #6cc; }
-}
-
-@media only screen and (width: 37.5em) {
-body:before { content: "This is exactly 600px/37.5em"; background: #bada55; }
-}
-
-@media only screen and (width: 48em) {
-body:before { content: "This is exactly 768px/48em"; background: pink; }
-}
-
-@media only screen and (width: 64em) {
-body:before { content: "This is exactly 1024px/64em"; background: orange; }
-}
+// When a class of todo is added to an element in the HTML it will highlight it so we know something needs doing. 
+.todo {
+	outline: 2px dashed red;
+	&:hover {
+		&:after {
+			content: "Something needs finishing - check source comments and remove html todo class when finished";
+			}
+		}
+	}
